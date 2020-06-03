@@ -9,7 +9,7 @@ spec:
     app: http-forwarder
   clusterIP: None
 ---
-apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: http-forwarder
@@ -25,7 +25,7 @@ spec:
         app: http-forwarder
     spec:
       containers:
-        - image: localhost:5000/http-forwarder
+        - image: docker.io/karolisr/http-forwarder:latest          
           name: http-forwarder
           ports:
             - containerPort: 13734
